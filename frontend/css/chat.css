@@ -1,0 +1,430 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    
+}
+
+:root {
+    font-size: 16px;
+    --background-light: #f6cfab;
+    --background-dark: #5e3c27;
+    --text-light: #3D211A;
+    --text-dark: #ffe7d1;
+    --header-footer-bg: #6F4D38;
+    --button-bg: #daa573;
+    --button-bg-hover: rgb(223, 186, 118);
+    --input-bg-light: #cd9058;
+    --input-bg-dark: #211006;
+    --message-self-bg: #ff550046;
+    --message-other-bg: #a09494;
+}
+
+/* Body Styles */
+body {
+    background-color: var(--background-light);
+    color: var(--text-light);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+
+/* Header and Footer Styles */
+header, .footer {
+    background-color: var(--header-footer-bg);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+header nav a {
+    color: white;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Container Styles */
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+/* Login and Registration Styles */
+.login, .register {
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--input-bg-light);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .login, body.dark-mode .register {
+    background-color: var(--input-bg-dark);
+}
+
+
+
+/* Chat Section Styles */
+.chat {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+  
+    
+}
+
+body.dark-mode .chat {
+    background-color: var(--background-dark);
+}
+
+.chat__messages {
+    flex-grow: 1;
+    padding: 30px 30px 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+body.dark-mode .chat__messages {
+    border-bottom: 1px solid #444;
+}
+
+.chat__messages > div {
+    padding: 10px;
+    max-width: 350px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    line-height: 22px;
+}
+
+/* Message Bubble Styles */
+.message--self {
+    background-color: var(--message-self-bg);
+    color: #121212;
+    border-radius: 10px 10px 0 10px;
+    display: flex;
+    align-self: flex-end;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.message--other {
+    display: flex;
+    background-color: var(--message-other-bg);
+    color: #070707;
+    border-radius: 0 10px 10px 10px;
+    align-self: flex-start;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.message--sender {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+}
+
+/* Chat Input Styles */
+.chat__form {
+    background-color: var(--input-bg-dark);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.chat__input {
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    flex-grow: 1;
+    background-color: #683b22;
+    outline: none;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.chat__input:focus {
+    outline: 1px solid #ffffff;
+}
+
+/* Upload Button Styles */
+.chat__upload-label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.chat__upload-input {
+    display: none;
+}
+
+.chat__upload-icon {
+    width: 24px;
+    height: 24px;
+    fill: #6F4D38;
+    transition: fill 0.3s;
+}
+
+.chat__upload-label:hover .chat__upload-icon {
+    fill: #6F4D38;
+}
+
+/* Estilos para alinhar os ícones do formulário de chat */
+.chat__form {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Ajuste para espaçamento entre os ícones */
+}
+
+/* Estilos do botão de jogos */
+#gamesButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* Estilo do botão de enviar mensagem */
+.chat__button {
+    background-color: #d1a17a; /* Cor de fundo personalizada */
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Estilo dos ícones */
+.material-symbols-outlined.btn-actions {
+    font-size: 24px; /* Ajuste do tamanho dos ícones */
+    color: #fff; /* Cor dos ícones */
+}
+
+/* Estilo do pop-up de jogos */
+.games-popup {
+    display: none; /* Esconde o pop-up por padrão */
+    position: fixed;
+    bottom: 70px; /* Ajuste a posição conforme necessário */
+    right: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    padding: 10px;
+    width: 150px;
+}
+
+.games-popup.active {
+    display: block; /* Mostra o pop-up quando ativo */
+}
+
+.games-popup ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.games-popup li {
+    margin: 5px 0;
+}
+
+.games-popup button {
+    background-color: var(--button-bg);
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0 .3s;
+}
+
+.games-popup button:hover {
+    background-color: var(--button-bg-hover);
+}
+
+/* Toggle Theme Button */
+#toggle-theme {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #6F4D38;
+    color: white;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#toggle-theme:hover {
+    background-color: #daa573;
+}
+
+/* Logout Button Styles */
+.logout-button {
+    border: 0;
+    background: transparent;
+}
+
+.logout__botton {
+    background-color: #6F4D38;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 50px; /* Deixa as bordas bem arredondadas */
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra */
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    transition: all 0.3s ease;
+}
+
+.logout__button:hover {
+    background-color: #daa573;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Intensifica a sombra no hover */
+    transform: translateY(-2px); /* Dá um leve efeito de elevação */
+}
+
+/* Error Section Styles */
+#error-section {
+    color: red;
+    display: none;
+}
+
+/* Terms of Service Section */
+.terms {
+    display: none;
+}
+
+.terms-box {
+    padding: 20px;
+    background-color: #494c4e;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Chat Image Styles */
+.chat__image {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Emoji Picker Styles */
+.emoji-picker {
+    display: none;
+    justify-content: space-evenly;
+    position: fixed;
+    bottom: 100px;
+    right: 10px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 300px;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#emojiButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: 500ms ease;
+}
+
+.btn-emoji {
+    transform: scale(1);
+}
+
+.btn-emoji:hover {
+    transform: scale(1.1);
+}
+
+.btn-actions {
+    color: #ffffff;
+    transition: 500ms;
+}
+
+.btn-actions:hover {
+    color: #daa573;
+}
+
+/* Estilo da foto de perfil */
+.message--profile-picture {
+    width: 30px;  /* Tamanho da foto de perfil */
+    height: 30px;  /* Tamanho da foto de perfil */
+    border-radius: 50%;  /* Faz a imagem ficar redonda */
+    object-fit: cover;  /* Garante que a imagem se ajuste ao círculo */
+    margin-right: 10px;  /* Espaço entre a imagem e o texto */
+}
+
+.message--self, .message--other {
+    display: flex;
+    align-items: flex-start;  /* Alinha a foto e o texto da mensagem */
+    gap: 10px;  /* Espaço entre a foto e a mensagem */
+}
+
+/* Imagem, vídeo e documentos dentro das mensagens */
+.message--content img, .message--content video, .message--content a {
+    width: 250px;  /* Limita o tamanho máximo da mídia */
+    height: auto;  /* Mantém a proporção das imagens e vídeos */
+    border-radius: 10px;  /* Adiciona borda arredondada às mídias */
+    display: block;  /* Faz com que a mídia ocupe a linha inteira */
+    margin-top: 10px;  /* Espaço entre a mensagem e a mídia */
+    object-fit: fill;
+}
+
+/* Estilo para links de documentos (PDF, DOCX, etc.) */
+.message--content a {
+    text-decoration: none;
+    color: #007 bff;  /* Cor do link */
+    font-weight: bold;  /* Deixa o link mais destacado */
+}
+
+/* Estilo de mensagens de texto */
+.message--content p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Caso seja uma mensagem de áudio */
+.message--content audio {
+    margin-top: 10px;  /* Espaço acima do player de áudio */
+}
+

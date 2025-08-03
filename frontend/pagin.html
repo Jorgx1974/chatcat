@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon-16x16.png" type="image/png">
+ 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="./css/pagin.css">
+   
+    <style>
+        /* Estilos para o carrossel */
+        .carrosel {
+            position: relative;
+            max-width: 300px; /* Largura máxima do carrossel */
+            margin: auto;
+            overflow: hidden;
+        }
+       
+        .carrosel img {
+            width: 100%; /* As imagens ocupam 100% da largura do carrossel */
+            height: 300px; /* Altura fixa para todas as imagens */
+            object-fit: cover; /* Faz as imagens preencherem o contêiner, cortando se necessário */
+            display: none; /* Esconde as imagens por padrão */
+            transition: opacity 0.5s ease-in-out; /* Animação de transição */
+        }
+       
+        .carrosel img.active {
+            display: block; /* Mostra apenas a imagem ativa */
+            opacity: 1; /* Define a opacidade da imagem ativa */
+        }
+ 
+        .carrosel img.fade {
+            opacity: 0; /* A imagem será invisível durante a transição */
+        }
+ 
+                .carrosel {
+            position: relative;
+            max-width: 300px; /* Largura máxima do carrossel */
+            margin: auto;
+            overflow: hidden;
+            border: 5px solid #6F4D38; /* Borda azul de 5px */
+            border-radius: 10px; /* Borda arredondada */
+        }
+ 
+       
+        .botao {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+       
+        .botao.prev {
+            left: 10px;
+        }
+       
+        .botao.next {
+            right: 10px;
+        }
+    </style>
+ 
+    <title>ChatCAT</title>
+</head>
+<body>
+<header>
+    <div class="logo">ChatCAT</div>
+    <nav>
+        <ul>
+            <li><a href="/frontend/dowload/Pokemon Platinum Version (US)(XenoPhobia).zip" download>Baixar</a></li> <!-- Botão de download -->
+            <li><a href="patchnotes.html">Atualizações</a></li>
+            <li><a href="suporte.html">Suporte</a></li>
+            <li><a href="index.html" class="login-button">Entrar</a></li>
+        </ul>
+    </nav>
+</header>
+ 
+<main>
+    <div class="content">
+        <h1>Bate-papo em Grupo Repleto de Diversão e Jogos</h1>
+        <p>Nosso site é perfeito para se conectar com amigos e descobrir novas comunidades. Personalize seu espaço para conversar, jogar e curtir.</p>
+    </div>
+ 
+    <div class="carrosel">
+        <img src="images/imagem1.jpg" class="active" alt="Imagem 1">
+        <img src="images/imagem2.jpg" alt="Imagem 2">
+        <img src="images/imagem3.jpg" alt="Imagem 3">
+        <img src="images/imagem4.jpg" alt="Imagem 4">
+        <img src="images/imagem5.jpg" alt="Imagem 5">
+        <button class="botao prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="botao next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+ 
+    <div class=""
+</main>
+ 
+ 
+<script>
+    let currentSlide = 0;
+ 
+    function showSlide(index) {
+        const slides = document.querySelectorAll('.carrosel img');
+        if (index >= slides.length) {
+            currentSlide = 0; // Retorna ao primeiro slide
+        } else if (index < 0) {
+            currentSlide = slides.length - 1; // Vai para o último slide
+        } else {
+            currentSlide = index;
+        }
+ 
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active', 'fade'); // Remove a classe 'active' e 'fade' de todas as imagens
+            if (i === currentSlide) {
+                slide.classList.add('active'); // Adiciona a classe 'active' à imagem atual
+                setTimeout(() => {
+                    slide.classList.remove('fade'); // Remove a classe 'fade' após a imagem ser ativada
+                }, 10); // Breve atraso para garantir que a imagem apareça
+            } else {
+                slide.classList.add('fade'); // Adiciona a classe 'fade' para as imagens não ativas
+            }
+        });
+    }
+ 
+    function changeSlide(direction) {
+        showSlide(currentSlide + direction);
+    }
+ 
+    // Função para avançar automaticamente os slides a cada 2 segundos
+    function autoSlide() {
+        setInterval(() => {
+            changeSlide(1); // Muda para o próximo slide
+        }, 2000); // 2000 ms = 2 segundos
+    }
+ 
+    // Inicia o carrossel automático
+    autoSlide();
+</script>
+</body>
+</html>
+ 
+ 

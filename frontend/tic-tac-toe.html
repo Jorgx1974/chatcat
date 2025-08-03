@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/jogos.css">
+    <title>Jogo da Velha</title>
+</head>
+<body>
+    <a href="chat.html" class="button">Voltar ao Chat</a>
+   
+    <h1>Jogo da Velha</h1>
+ 
+    <div id="tic-tac-toe">
+        <div class="tic-tac-toe-cell" data-index="0"></div>
+        <div class="tic-tac-toe-cell" data-index="1"></div>
+        <div class="tic-tac-toe-cell" data-index="2"></div>
+        <div class="tic-tac-toe-cell" data-index="3"></div>
+        <div class="tic-tac-toe-cell" data-index="4"></div>
+        <div class="tic-tac-toe-cell" data-index="5"></div>
+        <div class="tic-tac-toe-cell" data-index="6"></div>
+        <div class="tic-tac-toe-cell" data-index="7"></div>
+        <div class="tic-tac-toe-cell" data-index="8"></div>
+    </div>
+   
+    <button onclick="resetTicTacToeGame()">Reiniciar</button>
+   
+    <div class="scoreboard">
+        <span id="scoreX">X: 0</span>
+        <span id="scoreO">O: 0</span>
+    </div>    
+   
+    <script src="js/jogos.js"></script>
+</body>

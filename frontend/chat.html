@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon-16x16.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="./css/chat.css">
+    <title>Chat</title>
+</head>
+<body>
+    <section class="container">
+        <!-- Chat Section -->
+        <section class="chat" id="chat-section">
+           
+            <button id="toggle-theme" aria-label="Toggle dark mode">🌙</button>
+ 
+            <button class="logout-button" id="logoutButton">
+                <span class="logout__botton">logout</span>  
+            </button>
+            <section class="chat__messages" id="chatMessages"></section>
+            <form class="chat__form" id="chatForm">
+                <input type="text" class="chat__input" placeholder="Digite uma mensagem" required />
+               
+                <!-- Botão de emoji -->
+                <button type="button" id="emojiButton" aria-label="Enviar emoji">
+                    <span class="material-symbols-outlined btn-actions">insert_emoticon</span>
+                </button>
+               
+                <!-- Botão de upload de imagem -->
+                <label for="imageUpload" class="chat__upload-label">
+                    <span class="material-symbols-outlined btn-actions">image</span>
+                </label>
+                <input type="file" class="chat__upload-input" id="imageUpload" accept="image/*,audio/*,video/*,application/pdf" multiple />
+               
+                <!-- Botão de jogos -->
+                <button type="button" id="gamesButton" aria-label="Abrir jogos">
+                    <span class="material-symbols-outlined btn-actions">sports_esports</span>
+                </button>
+               
+                <!-- Botão de enviar mensagem -->
+                <button type="submit" class="chat__button" aria-label="Enviar mensagem">
+                     <span class="material-symbols-outlined">send</span>
+                </button>
+            </form>
+           
+            <div id="gamesPopup" class="games-popup">
+                <ul>
+                    <li><button type="button" onclick="openGame('tic-tac-toe.html')">Jogo da Velha</button></li>
+                    <li><button type="button" onclick="openGame('snake.html')">Jogo da Cobrinha</button></li>
+                    <li><button type="button" onclick="openGame('campo-minado.html')">Campo Minado</button></li>
+                </ul>
+            </div>
+            <div id="emojiPicker" class="emoji-picker"></div>
+        </section>
+    </section>
+    <audio id="sendNotification" src="som/OKAY.mp3" preload="auto"></audio>
+ 
+    <script src="./js/chat.js"></script>
+</body>
+</html>

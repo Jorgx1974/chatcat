@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/jogos.css">
+    <title>Jogo da Cobrinha</title>
+</head>
+<body>
+    <a href="chat.html" class="button">Voltar ao Chat</a>
+ 
+    <h1>Jogo da Cobrinha</h1>
+   
+    <!-- Div para exibir a pontuação -->
+    <div id="scoreboard">
+        <span>Pontuação: <span id="score">0</span></span> |
+        <span>Maior Pontuação: <span id="highScore">0</span></span>
+    </div>
+   
+    <canvas id="snakeGame" width="400" height="400" style="border: 1px solid black;"></canvas>
+   
+    <button onclick="resetSnakeGame()">Reiniciar</button>
+ 
+    <script src="js/jogos.js"></script>
+</body>
+</html>
+ 

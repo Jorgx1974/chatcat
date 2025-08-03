@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+:root {
+    font-size: 16px;
+    --background-light: #FAF0E6;      /* Trocado para um tom mais suave de bege claro */
+    --background-dark: #3B2A25;       /* Escurecido para dar mais contraste no modo escuro */
+    --text-light: #3A2A24;            /* Escurecido ligeiramente para melhor legibilidade */
+    --text-dark: #F3EDE2;             /* Clarificado para contraste no modo escuro */
+    --header-footer-bg: #8B5E3C;      /* Um marrom mais rico para cabeçalhos e rodapés */
+    --button-bg: #A67556;             /* Tom médio de marrom que complementa os demais */
+    --button-bg-hover: #C18A68;       /* Um marrom suave para destaque ao passar o mouse */
+    --input-bg-light: #E7CAB2;        /* Um tom de pêssego claro para os campos de entrada */
+    --input-bg-dark: #4D3A33;         /* Escuro o suficiente para contraste no modo noturno */
+    --message-self-bg: #D3C5B8;       /* Marrom claro para mensagens do próprio usuário */
+    --message-other-bg: #B8A9A0;      /* Um tom suave e diferenciado para mensagens de outros */
+}
+
+/* Body Styles */
+body {
+    background-color: var(--background-light);
+    color: var(--text-light);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+
+/* Container Styles */
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Button Group Styles */
+.button-group {
+    position: absolute;
+    top: 10px; /* Distância do topo */
+    right: 10px; /* Distância da direita */
+    display: flex;
+    gap: 10px; /* Espaçamento entre os botões */
+}
+
+/* Estilo para os botões Home e Toggle Theme */
+#home-button, #toggle-theme {
+    background-color: var(--button-bg);
+    color: white;
+    border: none;
+    padding: 8px 12px; /* Ajustando padding para deixar o botão menor */
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem; /* Tamanho da fonte ajustado */
+    transition: background-color 0.3s;
+    width: 40px; /* Definindo um width fixo para ambos os botões */
+    height: 40px; /* Altura fixa para garantir o alinhamento */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#home-button:hover, #toggle-theme:hover {
+    background-color: var(--button-bg-hover);
+}
+
+/* Login and Registration Styles */
+.login, .register {
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--input-bg-light);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .login, body.dark-mode .register {
+    background-color: var(--input-bg-dark);
+}
+
+.login > h2, .register > h2 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+.login__form, .register__form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login__input, .register__input, .register__input_name, .register__input_email {
+    border: 1px solid #f8dec2;
+    padding: 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+body.dark-mode .login__input, body.dark-mode .register__input,
+body.dark-mode .register__input_name, body.dark-mode .register__input_email {
+    background-color: var(--input-bg-dark);
+    border: 1px solid #6F4D38;
+    color: var(--text-dark);
+}
+
+.login__input:focus, .register__input:focus {
+    border-color: var(--button-bg);
+    box-shadow: 0 0 5px rgba(158, 101, 31, 0.5);
+}
+
+/* Button Styles */
+.login__button, .register__button, #toggle-theme {
+    background-color: var(--button-bg);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.login__button:hover, .register__button:hover, #toggle-theme:hover {
+    background-color: var(--button-bg-hover);
+}
+
+.login__button:disabled, .register__button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Other Styles */
+#error-section {
+    color: red;
+    display: none;
+}
+
+.terms {
+    display: none;
+}
+
+.terms-box {
+    padding: 20px;
+    background-color: #ffd3b4;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.chat__image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+/* Estilo do contêiner da foto de perfil no formulário de registro */
+.profile-picture-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+/* Estilo do preview da foto de perfil */
+.profile-picture-preview {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover; /* Garante que a imagem preencha o círculo */
+    border: 2px solid var(--button-bg);
+    margin-top: 10px;
+}
+
+/* Estilo para o botão de upload de foto de perfil */
+#profile-picture {
+    margin-top: 10px;
+}
+
+/* Modo escuro para pré-visualização da foto */
+body.dark-mode .profile-picture-preview {
+    border-color: #C18A68; /* Altera a cor da borda no modo escuro */
+}

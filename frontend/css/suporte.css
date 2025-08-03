@@ -1,0 +1,131 @@
+body {
+    background-color: #F5F5DC; /* Cor de fundo padrão */
+    font-family: 'Inter', sans-serif;
+    color: #3D211A; /* Cor do texto padrão */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+body {
+    background-color: #F5F5DC; /* Cor de fundo padrão */
+    font-family: 'Inter', sans-serif;
+    color: #3D211A; /* Cor do texto padrão */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative; /* Necessário para posicionar os pseudo-elementos */
+}
+
+body::before, body::after {
+    content: '';
+    position: absolute;
+    background-image: url('/chatcat/frontend/images/paw-print.png'); /* Adicione a imagem da pata */
+    background-size: 100px; /* Tamanho da imagem de pata */
+    opacity: 0.1; /* Tornar as patas mais transparentes */
+}
+
+body::before {
+    top: 10%; /* Ajuste a posição vertical */
+    left: 5%; /* Ajuste a posição horizontal */
+    width: 100px; /* Largura da pata */
+    height: 100px; /* Altura da pata */
+}
+
+body::after {
+    bottom: 10%; /* Ajuste a posição vertical */
+    right: 5%; /* Ajuste a posição horizontal */
+    width: 100px; /* Largura da pata */
+    height: 100px; /* Altura da pata */
+}
+
+/* Adicione mais regras para as patas se necessário */
+
+/* Cabeçalho */
+header {
+    background-color: #6F4D38; /* Cor do cabeçalho */
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem; /* Ajustar tamanho da fonte */
+}
+
+/* Conteúdo Principal */
+.main-content {
+    max-width: 800px; /* Definindo largura máxima */
+    margin: 2rem auto; /* Centraliza o conteúdo */
+    padding: 0 1rem; /* Espaçamento lateral */
+    flex: 1;
+    overflow-y: auto; /* Permite rolagem se necessário */
+}
+
+/* Botão de Voltar */
+.back-button {
+    background-color: #6F4D38; /* Cor do botão */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 1rem; /* Espaço abaixo do botão */
+}
+
+.back-button:hover {
+    background-color: #5C3E2E; /* Efeito hover no botão */
+}
+
+/* Soluções */
+.solution {
+    background-color: #FFF; /* Fundo das soluções */
+    border: 1px solid #6F4D38; /* Borda para destacar */
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.solution h2 {
+    margin-top: 0;
+    font-size: 1.2rem; /* Tamanho do título da solução */
+    color: #3D211A; /* Cor do título */
+}
+
+.solution p {
+    color: #4F403A; /* Texto das soluções */
+    margin: 0.5rem 0;
+}
+
+/* Informações de Contato */
+.contact {
+    background-color: #FFF; /* Fundo de contato */
+    border: 1px solid #6F4D38; /* Borda para destacar */
+    border-radius: 5px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.contact h2 {
+    margin-top: 0;
+    color: #3D211A; /* Cor do título de contato */
+}
+
+.contact p {
+    color: #4F403A; /* Texto das informações de contato */
+}
+
+/* Rodapé */
+footer {
+    background-color: #6F4D38; /* Cor do rodapé */
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
